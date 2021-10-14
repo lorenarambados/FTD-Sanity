@@ -1,0 +1,7 @@
+# Cypress Tests
+cypress/screenshots/
+cypress/videos/
+cypress/reports/
+
+# node modules
+node_modules
