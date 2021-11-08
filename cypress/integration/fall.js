@@ -3,7 +3,7 @@ describe('Birthday menu', function (){
         cy.visit('https://ftd.com/?forcesplit=merx');
         cy.get('.hamburger_hamburger__27gQ0 > svg').should('be.visible').click()
         cy.get('#mobile-navigation-container-inner').should('be.visible')
-        cy.get('#mobile-navigation-container-inner').contains('Fall')
+        cy.get('#mobile-navigation-container-inner').contains('Thanksgiving')
         cy.get('#mobile-navigation-container-inner').contains('Birthday')
         cy.get('#mobile-navigation-container-inner').contains('Sympathy')
         cy.get('#mobile-navigation-container-inner').contains('All Occasions')
@@ -87,14 +87,53 @@ describe('Birthday menu', function (){
         cy.get('.col-md-12 > .cms-component > .container').contains('Fall Gifts & Fall Gift Baskets')
      });
 
-     it('Validate that Boss Day does not 404 page' , function(){
+     it('Validate that Diwali not 404 page' , function(){
         cy.get('.hamburger_hamburger__27gQ0 > svg').should('be.visible').click()
         cy.get('#mobile-navigation-container-inner').contains('Fall').click()
         cy.get('#navigation-menu-Fall-wrapper > .side-panel_content__-yKmm').should('be.visible')
-        cy.get('.side-panel_content__-yKmm').contains("Boss's Day").click()
-        cy.url().should('include', 'occasion/boss-day?')
-        cy.get('.col-md-12 > .cms-component > .container').contains("Boss's Day")
+        cy.get('.side-panel_content__-yKmm').contains("Diwali").click()
+        cy.url().should('include', 'occasion/diwali?')
+        cy.get('.col-md-12 > .cms-component > .container').contains("Diwali Flowers")
      });
-
+     it('Validate that Halloween not 404 page' , function(){
+      cy.get('.hamburger_hamburger__27gQ0 > svg').should('be.visible').click()
+      cy.get('#mobile-navigation-container-inner').contains('Fall').click()
+      cy.get('#navigation-menu-Fall-wrapper > .side-panel_content__-yKmm').should('be.visible')
+      cy.get('.side-panel_content__-yKmm').contains("Halloween").click()
+      cy.url().should('include', 'occasion/halloween?')
+      cy.get('.col-md-12 > .cms-component > .container').contains("Halloween Gifts, Flowers, & Plants")
+   });
+   it('Validate that Singles Day not 404 page' , function(){
+      cy.get('.hamburger_hamburger__27gQ0 > svg').should('be.visible').click()
+      cy.get('#mobile-navigation-container-inner').contains('Fall').click()
+      cy.get('#navigation-menu-Fall-wrapper > .side-panel_content__-yKmm').should('be.visible')
+      cy.get('.side-panel_content__-yKmm').contains("Singles Day").click()
+      cy.url().should('include', 'occasion/singles-day?')
+      cy.get('.col-md-12 > .cms-component > .container').contains("Singles' Day Gifts & Flowers Sale")
+   });
+   it('Validate that Thanksgiving Collection not 404 page' , function(){
+      cy.get('.hamburger_hamburger__27gQ0 > svg').should('be.visible').click()
+      cy.get('#mobile-navigation-container-inner').contains('Fall').click()
+      cy.get('#navigation-menu-Fall-wrapper > .side-panel_content__-yKmm').should('be.visible')
+      cy.get('.side-panel_content__-yKmm').contains("THANKSGIVING BEST SELLERS").click()
+      cy.url().should('include', 'occasion/thanksgiving?')
+      cy.get('.banner').contains("THANKSGIVING FLOWERS")
+   });
+   it('Validate that Veterans Day Collection not 404 page' , function(){
+      cy.get('.hamburger_hamburger__27gQ0 > svg').should('be.visible').click()
+      cy.get('#mobile-navigation-container-inner').contains('Fall').click()
+      cy.get('#navigation-menu-Fall-wrapper > .side-panel_content__-yKmm').should('be.visible')
+      cy.get('.side-panel_content__-yKmm').contains("Veteran's Day").click()
+      cy.url().should('include', 'occasion/veterans-day-flowers?')
+      cy.get('.col-md-12 > .cms-component > .container').contains("Veterans Day Flowers & Gifts")
+   });
+   it('Validate that View Fall Collection Collection not 404 page' , function(){
+      cy.get('.hamburger_hamburger__27gQ0 > svg').should('be.visible').click()
+      cy.get('#mobile-navigation-container-inner').contains('Fall').click()
+      cy.get('#navigation-menu-Fall-wrapper > .side-panel_content__-yKmm').should('be.visible')
+      cy.get('.side-panel_content__-yKmm').contains("View Fall Collection").click()
+      cy.url().should('include', 'occasion/fall?')
+      cy.get('[data-section-id="404Ibv16ofF5s00F4Bww5U"] > .container > .row > .col > .mt-0').contains("Fall Flowers and Gifts")
+   });
      
 })
